@@ -1,12 +1,12 @@
 {
   "name": "gxtech-cli",
-  "version": "1.0.1",
-  "description": "",
+  "version": "1.0.2",
+  "description": "gxtech-cli脚手架工具",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "gxtech",
   "license": "ISC",
   "bin": {
     "gxtech": "index.js"
