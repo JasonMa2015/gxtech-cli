@@ -10,30 +10,11 @@ const ora = require('ora')
 const chalk = require('chalk')
 const logSymbols = require('log-symbols')
 
+const templates = require('./templateConfig')
+
 // 1.获取用户输入命令
 program
-  .version('1.0.0')  // -v 或者 --version 的时候会输出该版本号
-
-const templates = {
-  'tpl-a': {
-    name: 'a模板',
-    description: 'a模板',
-    url: 'https://github.com/JasonMa2015/tpl-a',
-    downloadUrl: 'https://github.com:JasonMa2015/tpl-a#master'
-  },
-  'tpl-b': {
-    name: 'b模板',
-    description: 'b模板',
-    url: 'https://github.com/JasonMa2015/tpl-b',
-    downloadUrl: 'https://github.com:JasonMa2015/tpl-b#master'
-  },
-  'tpl-c': {
-    name: 'c模板',
-    description: 'c模板',
-    url: 'https://github.com/JasonMa2015/tpl-c',
-    downloadUrl: 'https://github.com:JasonMa2015/tpl-c#master'
-  }
-}
+  .version('1.0.2')  // -v 或者 --version 的时候会输出该版本号
 
 // jm init a a-name
 // 基于a模板进行初始化
@@ -70,15 +51,15 @@ program
       inquirer.prompt([{
         type: 'input',
         name: 'name',
-        message: '请输入项目名称'
+        message: '请输入项目名称:'
       }, {
         type: 'input',
         name: 'description',
-        message: '请输入项目简介'
+        message: '请输入项目简介:'
       }, {
         type: 'input',
         name: 'author',
-        message: '请输入作者名称'
+        message: '请输入作者名称:'
       }]).then((answers) => {
         // 把采集到的用户输入的数据解析替换到 package.json 文件中
         const packagePath = `${projectNane}/package.json`
@@ -95,9 +76,9 @@ program
   .description('查看所有可用模板')
   .action(() => {
     // 根据模板名下载对应的模板到本地并起名projectName
+    console.log('模板列表：')
     for (let key in templates) {
-      console.log(`${key} ${templates[key].name}`)
-
+      console.log(`${templates[key].name} ${templates[key].description}`)
     }
   });
 
