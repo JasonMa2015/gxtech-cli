@@ -1,5 +1,5 @@
 {
-  "name": "gxtech-cli",
+  "name": "@gxtech/gxtech-cli",
   "version": "1.0.3",
   "description": "gxtech-cli脚手架工具",
   "main": "index.js",
