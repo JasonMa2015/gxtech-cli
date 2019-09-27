@@ -5,7 +5,7 @@
 ## 安装
 
 ```javascript
-npm i --global gxtech-cli
+npm i --global @gxtech/gxtech-cli
 ```
 
 ## 命令
