@@ -14,7 +14,7 @@ const templates = require('./templateConfig')
 
 // 1.获取用户输入命令
 program
-  .version('1.0.2')  // -v 或者 --version 的时候会输出该版本号
+  .version('1.0.0')  // -v 或者 --version 的时候会输出该版本号
 
 // jm init a a-name
 // 基于a模板进行初始化
